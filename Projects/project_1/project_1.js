@@ -3,8 +3,6 @@ const box = document.querySelectorAll(".common-box-prop")
 // console.log(box);
 
 box.forEach((i)=>{
-    // console.log(i);
-
     // loop k andar hrr k element prr click event lgaaya 
     // matlab click karenge to kuch perform hoga
     i.addEventListener("click",function(event){   
