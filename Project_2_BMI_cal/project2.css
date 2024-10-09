@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #004d4d;
+}
+.BMI{
+    background-color: grey;
+    max-width: 350px;
+    margin: auto;
+    border-radius: 20px;
+    padding-top: 15px 0px;
+}
+.nav-bar{
+   
+    width: 90vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+.nav-bar a{
+    margin-left: 10px;
+    height: 20px;
+    width: 30px;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    margin: auto;
+    height: 30vh;
+    display: grid;
+    justify-content: center;
+    align-items:center;
+    column-gap: 30px;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+    
+}
+.hieght{
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+}
+.weight{
+    display: flex;
+    column-gap: 36px;
+    align-items: center;
+}
+#hieght{
+    height: 30px;
+}
+#weight{
+    height: 30px;
+}
+.submit .buttons{
+    padding: 5px 20px;
+    border: none;
+}
+.submit .button-1{
+    background-color: black;
+    color: white;
+}
+.submit .button-2{
+    background-color:cadetblue;
+    color: white;
+}
+
+.heading{
+    text-align: center;
+}
+.result{
+    text-align: center;
+}
