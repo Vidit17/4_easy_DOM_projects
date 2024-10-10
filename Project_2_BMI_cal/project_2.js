@@ -8,6 +8,7 @@ form.addEventListener("submit",function(e){ // whenever you click submit a event
     const hieght = parseInt(document.querySelector("#hieght").value);
     const weight = parseInt(document.querySelector("#weight").value);
     const result = document.querySelector(".result")
+    const bmi_number = document.querySelector(".bmi")
     if (hieght < 0 || isNaN(hieght) || hieght === '') {
         result.innerHTML = "Please enter valid Hieght"
     }
@@ -16,14 +17,29 @@ form.addEventListener("submit",function(e){ // whenever you click submit a event
     }
     else{
         const bmi = (weight/((hieght*hieght)/10000)).toFixed(2)
-        if (bmi<=18.6) {
-            result.innerHTML = `${bmi} ,  You are under-weight`
-        }else if(bmi>18.6&&bmi<24.9){
-            result.innerHTML = `${bmi} , You have normal weight`
-        } else if(bmi>=24.9){
-            result.innerHTML = `${bmi} , You are Over-weight`
+        if (bmi<18.6) {
+            bmi_number.innerHTML = `${bmi}`
+            bmi_number.style.color = "yellow"
+           result.innerHTML = ` , You are under-wieght`
+        }else if(bmi>=18.6&&bmi<24.9){
+            bmi_number.innerHTML = `${bmi}`
+            bmi_number.style.color = "green"
+           result.innerHTML = ` , You have normal wieght`
+        } else if(bmi>=24.9&&bmi<31){
+            bmi_number.innerHTML = `${bmi}`
+            bmi_number.style.color = "pink"
+           result.innerHTML = ` , You are over Wieght`
+        }else if(bmi>=31){
+            bmi_number.innerHTML = `${bmi}`
+            bmi_number.style.color = "red"
+           result.innerHTML = ` , You are obese`
         }
-    }
-    
-    
+    }  
+})
+
+form.addEventListener("reset",function(e){
+    const result = document.querySelector(".result")
+    const bmi_number = document.querySelector(".bmi")
+    result.innerHTML = ""
+    bmi_number.innerHTML = ""
 })

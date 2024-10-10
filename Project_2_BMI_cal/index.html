@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="project2.css">
 </head>
+
 <body>
     <div class="nav-bar">
-    <a href="/index.html">HOME</a>
+        <a href="/index.html">HOME</a>
     </div>
     <section class="BMI">
         <header>
-            
+
             <div class="heading">
                 <h1>BMI calculator</h1>
             </div>
@@ -28,15 +30,52 @@
                     <label for="weight">Enter weight : </label>
                     <input id="weight" type="text" placeholder="weight(kgs)">
                 </div>
-               <div class="submit">
-                <input type="reset" class="buttons button-1">
-                <input type="submit" class="buttons button-2">
-                
-               </div>
+                <div class="submit">
+                    <input type="reset" class="buttons button-1">
+                    <input type="submit" class="buttons button-2">
+
+                </div>
             </form>
-            <div class="result"></div>
+            <div class="whole-state">
+                <div class="bmi"></div>
+                <div class="result">
+                </div>
+            </div>
         </main>
+        <div class="spectrum">
+            <div class="under-w common-prop">
+                <p>UNDERWEIGHT</p>
+                <p><18.6</p>
+            </div>
+            <div class="normal common-prop">
+                <p>NORMAL</p>
+                <p>18.6-24.8</p>
+            </div>
+            <div class="over-w common-prop">
+                <p>OVERWEIGHT</p>
+                <p>24.9-29.9</p>
+            </div>
+            <div class="obese common-prop">
+                <p>OBESE</p>
+                <p>>29.9</p>
+            </div>
+
+        </div>
     </section>
+    <div class="content">
+        <div class="links">
+            <a href="">Github</a>
+            <a href="">Linkdin</a>
+        </div>
+        <div class="inner-content">
+            <p>Crafted with ❤️ by Refined Guides. </p>
+            <p>If my work brings you joy, consider a coffee! ☕️</p>  
+        </div>
+        <div class="button">
+           <a href="https://drive.google.com/file/d/19tRqVCCloI5rMlJVwByM1i9Jv2WQ-hEv/view?usp=drivesdk"><button>Buy me a coffee</button></a>
+        </div>
+    </div>
 </body>
 <script src="project_2.js"></script>
+
 </html>

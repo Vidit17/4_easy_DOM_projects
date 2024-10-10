@@ -6,11 +6,13 @@ body{
     background-color: #004d4d;
 }
 .BMI{
-    background-color: grey;
-    max-width: 350px;
+    background-color: white;
+    max-width: 500px;
     margin: auto;
     border-radius: 20px;
-    padding-top: 15px 0px;
+    padding: 15px 0px;
+    scale: 1.3;
+    margin-top: 60px;
 }
 .nav-bar{
    
@@ -20,15 +22,18 @@ body{
     align-items: center;
 }
 .nav-bar a{
-    margin-left: 10px;
+    margin-left: 50px;
     height: 20px;
-    width: 30px;
     text-decoration: none;
-    border: 2px solid black;
-    padding: 5px 20px;
+    /* border: 2px solid black; */
+    padding: 10px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    
 }
 .form{
     margin: auto;
@@ -39,9 +44,10 @@ body{
     column-gap: 30px;
 }
 .submit{
+    top: 0px;
     display: flex;
     justify-content: center;
-    column-gap: 50px;
+    column-gap: 30px;
     
 }
 .hieght{
@@ -56,26 +62,110 @@ body{
 }
 #hieght{
     height: 30px;
+    padding-left: 10px;
 }
 #weight{
+    padding-left: 10px;
     height: 30px;
 }
 .submit .buttons{
-    padding: 5px 20px;
+    padding: 8px 20px;
     border: none;
+    width: 130px;
 }
 .submit .button-1{
     background-color: black;
     color: white;
+    border-radius: 5px;
+}
+.submit .button-1:hover{
+    background-color: rgba(0, 0, 0, 0.696);
+}
+.submit .button-2:hover{
+    background-color: rgba(95, 158, 160, 0.686);
 }
 .submit .button-2{
     background-color:cadetblue;
     color: white;
+    border-radius: 5px;
 }
 
 .heading{
     text-align: center;
 }
+.whole-state{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
 .result{
+    
+   
+}
+.bmi{
+    font-size: large;
+    font-weight: bolder;
+}
+
+/* spectrum */
+
+.spectrum{
+    display: flex;
+    justify-content: center;
+}
+.under-w{
+    border-top: 4px solid yellow;
+}
+.normal{
+    border-top: 4px solid green;
+}
+.over-w{
+    border-top: 4px solid pink;
+}
+.obese{
+    border-top: 4px solid red;
+}
+.common-prop{
+    padding-top: 5px;
+}
+.common-prop p{
+    width: 110px;
+    font-size: 12px;
+    font-weight: 700;
+    color: grey;
     text-align: center;
+    /* padding: 5px 0px; */
+}
+.content{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    row-gap: 10px;
+}
+.inner-content p{
+    color: white;
+    text-align:center;
+}
+
+.links{
+    display: flex;
+    column-gap: 10px;
+}
+.links a{
+    color: rgba(133, 196, 198, 0.415);
+}
+
+
+
+@media screen and (max-width : 710px) {
+    .BMI{
+        scale: 0.8;
+    }
+    .common-prop p{
+        width: 90px;
+    }
 }
