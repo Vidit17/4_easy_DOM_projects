@@ -6,10 +6,12 @@ let prev_guess_span = document.querySelector(".prev-guess");
 let guess_remaining = document.querySelector(".guess-rema");
 let result = document.querySelector(".p-result");
 let newGame_tag = document.querySelector(".new-game")
+let levels = document.querySelector(".levels")
+let challenge = document.querySelector(".challenge");
 
 let prevguess = [];
 let total_guess = 1;
-
+let level = 1;
 let game = true;
 
 if (game) {
@@ -48,7 +50,12 @@ function cleaner_updation(){
 function check_guess(guess){
     if (guess==random_number) {
         result.innerHTML = `You won number was ${random_number}`;
-        endgame()
+        newGame_tag.innerHTML = "Move to the next level"
+        if (level===1) {
+            new_level_2()
+        }else if(level==2){
+            endgame()
+        }
     } else if (guess>random_number) {
         result.innerHTML = `your guess is too big`
     } else {
@@ -78,4 +85,33 @@ function newGame(){
     result.innerHTML = ""
     newGame_tag.innerHTML = ""
     game = true;
+}
+
+function new_level_2(){
+    user_input.value = ""
+    user_input.setAttribute("disabled","")
+    level++
+    newGame_tag.addEventListener("click",function(e){
+        user_input.removeAttribute("disabled")
+        e.preventDefault()
+        levels.innerHTML = `Level ${level}`
+        challenge.innerHTML = "Try and guess a random number between 10 and 20"
+        random_number = parseInt(Math.random()*(20-10)+10)
+        prevguess = []
+        total_guess = 1
+        prev_guess_span.innerHTML = prevguess
+        guess_remaining.innerHTML = 10
+        result.innerHTML = ""
+        process_level_2()
+    })
+}
+
+function process_level_2(){
+    if (game) {
+        submit.addEventListener("click",function(e){
+            e.preventDefault()
+            let guess = parseInt(user_input.value);
+            validateguess(guess)
+        })
+    }
 }
