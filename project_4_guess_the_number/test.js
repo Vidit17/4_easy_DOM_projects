@@ -1,2 +1,8 @@
-let random;
-console.log(random)
+
+
+
+let game = true;
+
+if (game) {
+    console.log("Game on")
+}

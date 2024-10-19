@@ -52,12 +52,22 @@ form{
     align-items: center;
     row-gap: 20px;
 }
+#guessfield{
+    height: 20px;
+}
 #submitbutton{
     border: none;
     background-color: black;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
+}
+.p-result{
+    height: 20px;
+    color: red;
+}
+.new-game{
+    height: 20px;
 }
 .result{
     display: flex;

@@ -18,12 +18,15 @@ if (game) {
     submit.addEventListener("click",function(e){
         e.preventDefault()
         let guess = parseInt(user_input.value);
+        console.log(guess);
+        
         validateguess(guess)
+        // console.log("2")
     })
 }
 
 function validateguess(guess){
-    if (guess==""||guess>100||guess<1||isNaN(guess)) {
+    if (guess==""||guess>10||guess<1||isNaN(guess)) {
         alert("Please enter valid number")
          user_input.value = ""
     }
@@ -32,7 +35,7 @@ function validateguess(guess){
         if (total_guess===10&&guess!=random_number) {
             result.innerHTML = `Game Over number was ${random_number}`
             cleaner_updation()
-            endgame()
+            endgame()  // you have attempted all limits
         } else{
             cleaner_updation()
             check_guess(guess)
@@ -50,12 +53,8 @@ function cleaner_updation(){
 function check_guess(guess){
     if (guess==random_number) {
         result.innerHTML = `You won number was ${random_number}`;
-        newGame_tag.innerHTML = "Move to the next level"
-        if (level===1) {
-            new_level_2()
-        }else if(level==2){
-            endgame()
-        }
+        result.style.color="green";
+        endgame()  // you have won
     } else if (guess>random_number) {
         result.innerHTML = `your guess is too big`
     } else {
@@ -74,7 +73,6 @@ function endgame(){
     })
 }
 
-
 function newGame(){
     random_number = parseInt(Math.random()*10)+1
     prevguess = []
@@ -83,35 +81,30 @@ function newGame(){
     guess_remaining.innerHTML = 10
     user_input.removeAttribute("disabled")
     result.innerHTML = ""
+    result.style.color = "red"
     newGame_tag.innerHTML = ""
     game = true;
 }
 
-function new_level_2(){
-    user_input.value = ""
-    user_input.setAttribute("disabled","")
-    level++
-    newGame_tag.addEventListener("click",function(e){
-        user_input.removeAttribute("disabled")
-        e.preventDefault()
-        levels.innerHTML = `Level ${level}`
-        challenge.innerHTML = "Try and guess a random number between 10 and 20"
-        random_number = parseInt(Math.random()*(20-10)+10)
-        prevguess = []
-        total_guess = 1
-        prev_guess_span.innerHTML = prevguess
-        guess_remaining.innerHTML = 10
-        result.innerHTML = ""
-        process_level_2()
-    })
-}
+// dead code
 
-function process_level_2(){
-    if (game) {
-        submit.addEventListener("click",function(e){
-            e.preventDefault()
-            let guess = parseInt(user_input.value);
-            validateguess(guess)
-        })
-    }
-}
+// function new_level_2(){
+//     user_input.value = ""
+//     user_input.setAttribute("disabled","")
+//     newGame_tag.innerHTML = "Move to next level"
+//     newGame_tag.addEventListener("click",function(e){
+//         e.preventDefault()
+        
+//         newGame()
+//         level++
+//         levels.innerHTML = `Level ${level}`
+//         if (level===2) {
+//             submit.addEventListener("click",function(e){
+//                 e.preventDefault()
+//                 let guess = parseInt(user_input.value);
+//                 console.log(guess)
+//             })
+//         }
+//     })
+    
+// }
